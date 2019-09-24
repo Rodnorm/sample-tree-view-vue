@@ -1,0 +1,72 @@
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background-color: #2c3e50;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+html {
+    background-color: #2c3e50;
+    body {
+        margin: 0;
+    }
+}
+    .tree-container {
+    min-height: 460px;
+
+    .tree {
+        border: solid green;
+        border-top: 10px;
+        border-width: 11px;
+        box-shadow: 16px -44px #165102, 11px -49px green, 68px -90px #165103, 62px -66px #165102, 29px -77px green, 122px -100px #165102, 124px -106px green, 67px -93px green, 129px 4px #165101, 129px 11px green, 133px 7px green;
+        background-color: #165102;
+        min-width: 150px;
+        min-height: 150px;
+        border-top-left-radius: 47%;
+        border-top-right-radius: 52%;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 18%;
+        transform: rotate(22deg) skew(-27deg, 13deg);
+        border-bottom-width: 3px;
+        border-left-width: 5px;
+        position: relative;
+        top: 50px;
+        right: 90px;
+
+        &:after {
+            content: '';
+            height: 200px;
+            width: 4px;
+            background-color: #621313;
+            position: absolute;
+            transform: rotate(-43deg) skew(2deg, 2deg);
+            left: 318px;
+            top: 103px;
+            box-shadow: 2px 0px #4b1515, 5px 0 #621313, 8px 0 #4b1515;
+        }
+
+        &:before {
+            content: '';
+            height: 33px;
+            width: 126px;
+            position: absolute;
+            border: 1px solid;
+            bottom: 68px;
+            left: 152px;
+            transform: rotate(-111deg) skew(-49deg, 6deg);
+            border-bottom-width: 10px;
+            border-color: #621313;
+            border-width: 0 0 6px 5px;
+            border-bottom-right-radius: 50%;
+            border-top-left-radius: 29%;
+            border-bottom-left-radius: 12%;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+$selected-blue: rgb(51, 122, 170);
+$hover-color: rgb(199, 199, 199);
+.element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    padding: .5rem 0 .5rem .5rem;
+
+    label {
+        user-select: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    div:not(.caret-container) {
+        display: flex;
+        padding: .3rem;
+        border-radius: 2px;
+        justify-content: space-between;
+    }
+    .caret-container {
+        display: flex;
+        width: 20px;
+        &:hover {
+            cursor: pointer;
+            span {
+                border-color: $selected-blue;
+            }
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .checkmark {
+            background-color: $selected-blue;
+            border: 1px solid $selected-blue;
+            &::after {
+                display: block;
+            }
+        }
+    }
+    .caret {
+        margin: .3rem .3rem .3rem auto;
+        border: solid rgb(56, 56, 56);
+        border-width: 0 2px 2px 0;
+        height: 10px;
+        width: 10px;
+        position: relative;
+        display: flex;
+        font-weight: bold;
+        transform: rotate(45deg);
+        animation: .1s linear forwards;
+        &.show-less {
+            @keyframes rotate-clockwise {
+                to {
+                    transform: rotate(-135deg);
+                }
+            }
+            animation: rotate-clockwise .1s linear forwards;
+        }
+    }
+    .checkmark {
+        top: 0;
+        left: 0;
+        height: 17px;
+        width: 17px;
+        border: 1px solid rgb(56, 56, 56);
+        border-radius: 2px;
+        background-color: white;
+        margin-right: .3rem;
+        &:after {
+            content: "";
+            position: relative;
+            display: none;
+            left: 4px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    div:hover {
+        cursor: pointer;
+        background-color: $hover-color;
+        .checkmarck {
+            background-color: $hover-color;
+        }
+    }
+    .nested {
+        display: none;
+        &.show {
+            display: contents;
+        }
+    }
+}
+
+ul {
+    padding-left: 0;
+    width: 100%;
+    li {
+        display: flex;
+        list-style: none;
+        margin-left: 1rem;
+    }
+}
